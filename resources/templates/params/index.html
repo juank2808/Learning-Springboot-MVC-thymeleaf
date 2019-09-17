@@ -9,7 +9,9 @@
 	<ul><!-- routes with thymeleaf- -->
 		<li><a th:href="@{/params/string(texto='Hello World')}">Send Text!!!</a></li>
 		<li><a th:href="@{/params/string(texto='Hello World 2')}">Send Text!!!</a></li>
-		
+		<hr/>
+		<li><a th:href="@{/params/mix-params(hello='Hello World 2',number=1)}">Send Text and number!!!</a></li>
+		<li><a th:href="@{/params/mix-params-request(hello='Hello World 2',number='hola')}">Send Text and number using try and catch!!!</a></li>
 		
 	</ul>
 </body>

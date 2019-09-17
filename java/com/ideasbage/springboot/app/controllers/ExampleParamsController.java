@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/params")
 public class ExampleParamsController {
 	
+	@GetMapping("/")
+	public String index() {
+		return "params/index";
+	}
 	//send to the controller data 
 	@GetMapping("/string")
 	/*the param is not required and with default value*/

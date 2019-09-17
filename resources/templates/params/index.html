@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+<title>Send Params  </title>
+</head>
+<body>
+	<h1>Send params with GET Method</h1>
+	<ul><!-- routes with thymeleaf- -->
+		<li><a th:href="@{/params/string(texto='Hello World')}">Send Text!!!</a></li>
+		<li><a th:href="@{/params/string(texto='Hello World 2')}">Send Text!!!</a></li>
+		
+		
+	</ul>
+</body>
+</html>

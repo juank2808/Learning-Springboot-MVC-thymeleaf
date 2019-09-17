@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ideasbage.springboot.app.models.Usuario;
@@ -38,8 +39,6 @@ public class IndexController {
 	@RequestMapping("/listar")
 	public String listar(Model model) {
 		
-		
-		
 		/* OP 1
 		 * 
 		List<Usuario> usuarios=new ArrayList<>(); 
@@ -48,13 +47,24 @@ public class IndexController {
 		usuarios.add(new Usuario("jordano","jimenez","example@example.com"));
 		*/
 		/* OP 2*/
-		List<Usuario> usuarios= Arrays.asList(new Usuario("Eustakio","Rodriguez","example@example.com"),
+		/*List<Usuario> usuarios= Arrays.asList(new Usuario("Eustakio","Rodriguez","example@example.com"),
 				new Usuario("lorenzo","perez","example@example.com"),
 				new Usuario("jordano","jimenez","example@example.com"),
 				new Usuario("Jacinto","Tocasuche","example@example.com"));
 		model.addAttribute("usuarios",usuarios);
-		model.addAttribute("titulo","Ejemplo con listas");
+		model.addAttribute("titulo","Ejemplo con listas");*/
 		/*return the view name*/
 		return "listar";
+	}
+	/*new way to display data in the view with ModelAttribute annotation*/
+	@ModelAttribute("usuarios")
+	/*we can use this to fill in forms of all kinds, selects inputs ...*/
+	/* or we can use too when we wanna  display the same data in several views*/
+	public List<Usuario> showUsuarios(){
+		List<Usuario> usuarios= Arrays.asList(new Usuario("Eustakio","Rodriguez","example@example.com"),
+				new Usuario("lorenzo","perez","example@example.com"),
+				new Usuario("jordano","jimenez","example@example.com"),
+				new Usuario("Jacinto","Tocasuche","example@example.com"));
+		return usuarios;
 	}
 }

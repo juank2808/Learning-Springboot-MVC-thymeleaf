@@ -35,7 +35,7 @@ public class ExampleParamsController {
 		/*send more than one parameter via URL using the GET method*/
 		/*now using HTTPServletRequest to extract the values*/
 		String hello = resquest.getParameter("hello");
-		/*if the valur is different to Integer we use try and catch*/
+		/*if the value is different to Integer we use try and catch*/
 		Integer number=null;
 		try {
 			 number = Integer.parseInt(resquest.getParameter("number"));

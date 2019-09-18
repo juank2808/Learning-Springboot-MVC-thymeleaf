@@ -15,9 +15,13 @@ import com.ideasbage.springboot.app.models.Usuario;
 
 @Controller
 public class IndexController {
-	
-	@Value("${application.controllers.mensaje}")
+	//inject values using @Value annotation
+	@Value("${application.index.mensaje}")
 	private String mensaje;
+	@Value("${application.perfil.mensaje}")
+	private String perfil;
+	@Value("${application.listar.mensaje}")
+	private String lista;
 	
 	@GetMapping("/")/*this is the index  / */
 	public String hola(Model model) {
@@ -32,7 +36,7 @@ public class IndexController {
 		usuario.setApellido("Rodriguez");
 		usuario.setEmail("example@example.com");
 		model.addAttribute("usuario",usuario);
-		model.addAttribute("titulo","Ejemplo con Models");
+		model.addAttribute("titulo",perfil);
 		/*return the view name*/
 		return "perfil";
 	}
@@ -47,12 +51,12 @@ public class IndexController {
 		usuarios.add(new Usuario("jordano","jimenez","example@example.com"));
 		*/
 		/* OP 2*/
-		/*List<Usuario> usuarios= Arrays.asList(new Usuario("Eustakio","Rodriguez","example@example.com"),
+		List<Usuario> usuarios= Arrays.asList(new Usuario("Eustakio","Rodriguez","example@example.com"),
 				new Usuario("lorenzo","perez","example@example.com"),
 				new Usuario("jordano","jimenez","example@example.com"),
 				new Usuario("Jacinto","Tocasuche","example@example.com"));
 		model.addAttribute("usuarios",usuarios);
-		model.addAttribute("titulo","Ejemplo con listas");*/
+		model.addAttribute("titulo",lista);
 		/*return the view name*/
 		return "listar";
 	}

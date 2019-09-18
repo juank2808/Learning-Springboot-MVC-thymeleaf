@@ -44,7 +44,7 @@ public class IndexController {
 	public String listar(Model model) {
 		
 		/* OP 1
-		 * 
+		 
 		List<Usuario> usuarios=new ArrayList<>(); 
 		usuarios.add(new Usuario("Eustakio","Rodriguez","example@example.com"));
 		usuarios.add(new Usuario("lorenzo","perez","example@example.com"));

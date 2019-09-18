@@ -3,16 +3,18 @@
 <head>
 	<meta charset="UTF-8" />
 	<title th:text="${title}"></title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/styleEx.css}">
 </head>
 <body>
 </head>
 <body>
-	<h1 th:text="${title}"></h1>
+	<h1 class="color-r" th:text="${title}"></h1>
+	<h2 class="color-b"> Example with CSS</h2>
 	<ul>
 		<li><a th:href="@{/variables/string/} + 'Hello world example 1'"> Example 1</a></li>
 		<li><a th:href="@{/variables/string/} + 'Hello world example 2'"> Example 2</a></li>
 		<li><a th:href="@{/variables/string/} + 'Hello world example 3' + '/' + 20000"> Example 3 with more parameters (number)</a></li>
 	</ul>
-	
+	<img th:src="@{/imagenes/kiritokun.jpg}">
 </body>
 </html>

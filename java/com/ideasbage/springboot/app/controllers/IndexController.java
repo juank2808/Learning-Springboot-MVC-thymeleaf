@@ -19,7 +19,7 @@ public class IndexController {
 	@Value("${application.controllers.mensaje}")
 	private String mensaje;
 	
-	@GetMapping("/")/*tthis is the index  / */
+	@GetMapping("/")/*this is the index  / */
 	public String hola(Model model) {
 		model.addAttribute("mensaje",mensaje);
 		return "hola";/*view name */

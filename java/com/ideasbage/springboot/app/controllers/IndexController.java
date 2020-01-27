@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.ideasbage.springboot.app.models.Usuario;
 
 @Controller
+@RequestMapping("/app")
 public class IndexController {
 	//inject values using @Value annotation
 	@Value("${application.index.mensaje}")
@@ -23,7 +24,7 @@ public class IndexController {
 	@Value("${application.listar.mensaje}")
 	private String lista;
 	
-	@GetMapping("/")/*this is the index  / */
+	@GetMapping({"/index","/","","/home"})/*this is the index  / */
 	public String hola(Model model) {
 		model.addAttribute("mensaje",mensaje);
 		return "hola";/*view name */

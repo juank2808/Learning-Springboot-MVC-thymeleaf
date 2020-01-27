@@ -31,7 +31,7 @@ public class ExampleParamsController {
 		return "params/show";
 	}
 	@GetMapping("/mix-params-request")
-	public String param(HttpServletRequest resquest,Model model) {
+	public String param(HttpServletRequest resquest, Model model) {
 		/*send more than one parameter via URL using the GET method*/
 		/*now using HTTPServletRequest to extract the values*/
 		String hello = resquest.getParameter("hello");
